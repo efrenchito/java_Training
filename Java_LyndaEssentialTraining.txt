@@ -1,0 +1,294 @@
+Java Essential Training (David Gassner)
+:::::::::::::::::::::::::::::::::::::::
+00.Introduction
+  Is this course for you?
+   .Java is used to program
+     -Web applications using servlets and JSP
+     -Native mobile apps for Android and BlackBerry
+     -Many other types of applications
+   .Java is NOT
+     -JavaScript
+     -Used to build native iOS (iPhone and iPad) applications
+     -The easiest language in the world
+     -The most difficult language in the world
+
+  The Target Audience
+    .This course is designed for
+     -People who want to develop software with Java
+     -Those with basic programming vocabulary
+
+    .Can you answer these questions?
+     -What is a statement?
+     -What is a variable?
+     -What is a function?
+     -What is a condition?
+
+    .No? First watch: Foundations of Programming: Fundamentals
+
+  Similar Languages
+    .Java is a "C-Style" language
+    .Programmers of these languages will recognize the basic syntax:
+     -C, C++, C#, JavaScript, PHP
+    .Java looks really different from:
+     -Visual Basic, VB.NET, ColdFusion Markup Language...
+01.Getting Started
+  The History of Java
+    ."The Green Project" began in 1991
+    .Original language name: Oak
+    .Name changed to Java
+    .First public release in 1995
+    .Write Once, Run Anywhere
+
+  Java Releases
+    1995 -> First Release
+    1996 -> JDK 1.0
+    1997 -> Inner classes,JavaBeans,JDBC,RMI,Reflection
+    1998 -> J2SE 1.2 (Swing graphical API, JIT compiler, Java Plug-in, Collections network
+    2000 -> J2SE 1.3 HotSpot JVM, JNDI Interface, Java Sound API, Debugging Architecture
+    2002 -> J2SE 1.4 Regular expressions, IPv6 network communications, Logging API, XML and XSLT, Security and cryptography, Java Web Start
+    2004 -> J2SE 5.0 (1.5) Generics, Metadata, Enumerations, Variable arguments, For-each enhancement
+    2006 -> J2S36 Performance JDBC 4.0, GUI improvements
+    2010 -> ORACLE BUYS SUN
+    2011 -> J2SE7 Strings in switch, Try-catch improvements, Simplified variable arguments, Underscores in numeric literals
+    2013 -> Everything that was deferred from J2SE7, Lambda expressions
+
+  The Principles of Java
+    .Simple, object-oriented, and familiar
+    .Robust and secure
+    .Architecture-neutral and portable
+    .High-performance
+    .Interpreted, threaded, and dynamic
+
+  Runtime Architecture
+    .Java is an interpreted language
+    .Compiles to bytecode instead of machine language
+    .The compiled application is portable between platforms without recompiling
+
+    -> Compiled bytecode
+    -> Core runtime and additional libraries
+    -> Java Virtual Machine (JVM)
+    -> Operative System
+
+  DEVELOPMENT TOOLS
+    .The Java SE Development Kit includes the runtime, compiler, and other tools, including:
+     -javac - a command line compiler
+     -java - a command line runtime
+     -jar - the packager
+     -javadoc - the documentation builder
+     -and more...
+
+
+  HELLO WORLD IN JAVA
+   .Create a file named HelloWorld.java
+     package com.lynda.javatraining;
+     public class HelloWorld {
+       public static void main(String[] args){
+         System.out.println("Hello, World!");
+       }
+     }
+
+
+  COMPILING AND RUNNING
+    Compiling to bytecode
+     C:\JavaProjects\HelloWorld>javac com\lynda\javatraining\HelloWorld.java
+
+     Resulting files
+       HelloWorld.class
+       HelloWorld.java
+
+     Running an application
+       C:\JavaProjects\HelloWorld>java com.lynda.javatraining.HelloWorld
+       -> Hello World
+
+
+  WHERE JAVA IS USED
+    On the Desktop
+       Java applets embedded in HTML pages
+       Executed by Java Plug-in
+       Dependent on Swing, AWT, and other visual libraries
+
+    On the Web
+       J2EE applications
+       Deployed on servers, such as Tomcat, JBoss, etc.
+       Code written as servlets and JavaServer Pages (JSP)
+
+    On Mobile Devices
+       Google Android, with Dalvik compiler and Eclipse tools
+       BlackBerry OS Java Development Environment
+       Many other mobile environments
+
+  CHOOSING A JAVA DEVELOPMENT ENVIRONMENT
+   .Any text editor will do!
+   .Many Java integrated development environments available
+   .Which operating system?
+     -Some only work on Mac
+     -Some only work on Windows
+     -Many are cross-platform
+
+   .Paid or free?
+     -Some of the best development environments are free
+     -Paid options can include advanced features
+
+   JAVA ON MAC OS X
+     .Xcode
+       -Free from Mac App Store
+       -Best for small scale projects
+       -Future support unknown
+
+     .BBEdit and TextWrangler
+       -Syntax coloring, function scanning
+       -Not a Java "specialist" IDE
+       -BBEdit requires a paid license, TextWrangler is free
+       http://www.barebones.com/
+
+   JAVA ON WINDOWS
+     .JCreator
+       -Free (JCreator LE) and paid (JCreator Pro) options
+       -Similar interface to TextPad
+       -Lightweight - fast startup!
+       www.jcreator.com
+
+     .TextPad
+       -Shareware
+       -Best for small scale projects
+       http://www.textpad.com/
+
+   FREE CROSS-PLATFORM JAVA IDE's
+     .NetBeans
+       -Created by Sun Microsystems
+       -Also supports C, C++, PHP
+       -Some distros have bundled JEE server
+       https://netbeans.org/
+
+     .Eclipse
+       -Open source and free
+       -Distros for many languages and environments
+       -Android developer tools also built for Eclipse
+       http://www.eclipse.org/
+
+
+  CROSS-PLATFORM JAVA IDE's WITH PAID LICENSES
+   .IntelliJ Idea
+    -Community (free) and Ultimate (paid) editions
+    -Has its own support for Android development
+    http://www.jetbrains.com/idea/
+
+   .JBuilder
+    -Originally created by Borland
+    -Designed for enterprise-level development
+    www.embarcadero.com/products/jbuilder
+02.Installing Software
+  INSTALL JDK
+   The first step is to download and install the Java Development Kit
+   http://java.oracle.com -> You'll have 2 options JRE & JDK. Download the JDK latest version
+   After Installation add the JDK bin folder path to your Environment Variables (System Variables>Path)
+     -> C:\Program Files\Java\jdk1.7.0_79\bin
+
+     C:\ java -version
+     java version "1.8.0_111"
+     java<TM> SE Runtime Environment <build 1.8.0_111-b14>
+     Java HotSpot<TM> Client VM <build 25.111-b14, mixed mode>
+  INSTALL IDE (Eclipse)
+    Just copy the directory to your desired destination path and open the eclipse.exe file
+03.Building our HelloWorld Application
+  03.1 Create HelloWorld Project
+    Create a shortcut on your desktop from the eclipse.exe file this makes easier to open eclipse in the future
+    Before you can start to work with eclipse you need to set up a WorkSpace.
+    A Workspace is a folder that tracks all of your Java projects, it contains all of your configurations,
+    pointers to your project regardless it they are or not inside of your project.
+      -> File> Switch Workspace
+
+    When you create Java Applications in Eclipse, they're allways inside Java Projects
+      -> File> New> Java Project
+           Project Name: HelloWorld
+           Location: (Default will be a folder with the ProjectName inside the WorkSpace)
+           JRE: -> I recommend to 'Use default JRE' this will give your project maximum portability between other systems.
+    Java Applications are builded inside Classes. In Java everything is an object and the objects are created from Classes
+    so you have to define a Class.
+      -> File > New> Java Class
+           Source folder: HelloWorld/src
+           Name: HelloWorld
+           Modifiers: public
+             [Checked] public static void main(Strin[] args)
+             [Checked] Inherited abstract methods
+
+    To make my Classes something more easy to read.
+      Window> Preferences
+        General > Appareance> Colors and Fonts
+          Basic> Text Fond => Edit (Adjust Font/Style/Size)
+  03.2 Import Existing Projects
+    From the Eclipse menu go to File> Import> General> Existing Projects into Workspace
+     You can import projects from two formats:
+      .An Exploded Projects where you can see the actual files on disk
+      .Archive files that are in .zip format
+04.Command Line (javac SourcefileName.java/java ClassName)
+  In some cases will be valuable to compile or run your applications from Command Line
+  Inicio>cmd -> This will open the Command Line Prompt
+
+    C:\_ cd [path]\ExerciseFiles\03_GettingStarted\CommandLine\src>
+    C:\_...\CommandLine\src> javac Main.java  -> This will generate the Main.class file in the src folder
+    C:\_...\CommandLine\src> java Main        -> This will run the Main.class located in the src folder
+
+  The javac utility have a lot of options to see it, just type javac from the command line and hit return.
+    C:\_...\CommandLine\src> javac
+    Usage: javac <options> <source files>
+    where posible options include:
+    -g                       Generate all debugging info
+    -g:none                  Generate no debugging info
+    -g:{lines,vars,source}   Generate only some debugging info
+    ...
+    -verbose                 Output messages about what the compiler is doing
+    -classpath <path>        Specify where to find user class files and annotation processors
+    -sourcepath <path>       Specify where to find input source files
+    -d <directory>           Specify where to place generated class files
+    -s <directory>           Specify where to place generated source files
+
+    C:\_...\CommandLine\src> javac Main.java -d ..\bin  -> The Main.class file will be generated in the bin folder
+    C:\_...\CommandLine\src> cd ..\bin
+    C:\_...\CommandLine\bin> java Main -> This will run the Main.class located in the bin folder
+
+  When you have issues with your Java code that you can't solve whitin your IDE, sometimes seeing what the compiler
+  is doing can be useful:
+    C:\_...\CommandLine\src> javac Main.java -verbose
+
+  You can add this javac options through your Eclipse IDE...
+05 API Documentation
+    When you're working in Java you're highly depending on the classes that are part of the Java Class Library
+    You can find documentation about this classes in the API Documentation that's hosted in the Oracle Web Site
+     -> In Google search for 'Java 6 API docs' *6 is the version that you'll be working on.
+        https://docs.oracle.com/javase/6/docs/api/ You'll see there are literally thousands of classes to choose from
+        shown in the list in the lower left corner, you can filter the list if you know the package or group that a class
+        is member of. A package is a group of classes that have common characteristics or work together in some way.
+     -> Eclipse IDE offers you the possibility to see the API Documentation through his editor.
+        -Opt1. Place the cursor over the class type Name you whish to know about, and when the popup context window appear press F2
+        -Opt2. Select the class type Name you wish to focus on then through the Menu Help> Dynamic help
+              access to the documentation (You may required internet access).
+06 Garbage Collector
+  How Garbage Collection Works
+    > Java manages memory automatically!
+    > The Garbage Collector is part of the Java Virtual Machine
+    > Objects referenced by Java variables are created in heap memory
+    > As long as any variable references an object, it's retained
+    > When all references expire, the object is eligible to be garbage collected
+    > The garbage collector runs in its own thread
+    > When garbage collector identifies a de-referenced object, it can destroy
+      it and reclaim memory - but it doesn't have to
+    > You as the programmer cannot force garbage collection
+    > Methods System.gc() and Runtime.gc() can request garbage collection, but
+      there is no guarantee it will happen
+    > If no memory is available for a newly requested object, JVM throws OutOfMemoryError
+
+  When do references Expire?
+    > Variables local to functions or code blocks expire when function is complete
+    > Explicitly expire persistent objects by setting to null
+
+  Tips for Managing memory
+    > Minimize the number of objects you create
+    > If concerned, use these methods to find out how much memory is available:
+      Runtime.maxMemory()
+      Runtime.totalMemory()
+      Runtime.freeMemory()
+    > Use command-line options to manage amount of available heap memory:
+      java -Xms256s HelloWorld Initial heap size
+      java -Xmx256m HelloWorld Maximum heap size
+      java -Xmn256n HelloWorld Heap size for young generation objects
